@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'planaula',
     'bootstrap4',
     'crispy_forms',
+    'bootstrapform',
 
 
 ]
