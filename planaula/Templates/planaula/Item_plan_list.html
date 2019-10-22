@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Itens dos Planos de Aula</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Plano de Aula</th>
+    <th>Conteúdo</th>
+    <th>Procedimentos</th>
+    <th>Recursos</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for Item_plan in object_list %}
+    <tr>
+    <td>{{ Item_plan.plana }}</td>
+    <td>{{ Item_plan.content }}</td>
+    <td>{{ Item_plan.proced }}</td>
+    <td>{{ Item_plan.recursos }}</td>
+    <td><a href="{% url "Item_plan_view" Item_plan.id %}">view</a></td>
+    <td><a href="{% url "Item_plan_edit" Item_plan.id %}">edit</a></td>
+    <td><a href="{% url "Item_plan_delete" Item_plan.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "Item_plan_new" %}">New</a>
+</body>
+</html>
