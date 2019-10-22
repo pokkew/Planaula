@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous">
+    </script>
     <title>Document</title>
 </head>
+
 <body>
+    {% load bootstrap4 %}
     <h1>Planos de Aula</h1>
-
-<table border="1">
-<thead>
-    <tr>
-    <th>UC</th>
-    <th>Evento</th>
-    <th>CH</th>
-    <th>Objetivo</th>
-    <th>Docente</th>
-    <th>View</th>
-    <th>Edit</th>
-    <th>Delete</th>
-    </tr>
-</thead>
-<tbody>
-    {% for PlanA in object_list %}
-    <tr>
-    <td>{{ PlanA.uc }}</td>
-    <td>{{ PlanA.evento }}</td>
-    <td>{{ PlanA.ch }}</td>
-    <td>{{ PlanA.obj }}</td>
-    <td>{{ PlanA.docente }}</td>
-    <td><a href="{% url "PlanA_view" PlanA.id %}">view</a></td>
-    <td><a href="{% url "PlanA_edit" PlanA.id %}">edit</a></td>
-    <td><a href="{% url "PlanA_delete" PlanA.id %}">delete</a></td>
-    </tr>
-    {% endfor %}
-</tbody>
-</table>
-
-<a href="{% url "PlanA_new" %}">New</a>
+    <div class="container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>UC</th>
+                    <th>Evento</th>
+                    <th>CH</th>
+                    <th>Objetivo</th>
+                    <th>Docente</th>
+                    <th>View</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for PlanA in object_list %}
+                <tr>
+                    <td>{{ PlanA.uc }}</td>
+                    <td>{{ PlanA.evento }}</td>
+                    <td>{{ PlanA.ch }}</td>
+                    <td>{{ PlanA.obj }}</td>
+                    <td>{{ PlanA.docente }}</td>
+                    <td><a href="{% url "PlanA_view" PlanA.id %}">view</a></td>
+                    <td><a href="{% url "PlanA_edit" PlanA.id %}">edit</a></td>
+                    <td><a href="{% url "PlanA_delete" PlanA.id %}">delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <a href="{% url "PlanA_new" %}">New</a>
 </body>
+
 </html>
